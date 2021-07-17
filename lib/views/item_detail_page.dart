@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:s_umkm/constant/string.dart';
 import 'package:s_umkm/constant/theme.dart';
 import 'package:s_umkm/models/item.dart';
+import 'package:s_umkm/views/umkm_detail_page.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ItemDetailPage extends StatelessWidget {
@@ -38,8 +39,8 @@ class ItemDetailPage extends StatelessWidget {
             child: Padding(
               padding: EdgeInsets.symmetric(vertical: 20, horizontal: 100),
               child: InkWell(
-                onTap: () => launch(
-                    " https://api.whatsapp.com/send?phone=${val.phone}&text=Hallo ${val.umkmName}, Saya Menginginkan Barang ini. apakah tersedia?"),
+                onTap: () async => await launch(
+                    "https://api.whatsapp.com/send?phone=62${val.phone}&text=Hallo ${val.umkmName}, Saya Menginginkan Barang ini. apakah tersedia?"),
                 borderRadius: BorderRadius.circular(30),
                 child: Container(
                   padding: EdgeInsets.all(10),
@@ -54,12 +55,11 @@ class ItemDetailPage extends StatelessWidget {
                         FontAwesome5.whatsapp,
                         color: Colors.white,
                       ),
-                      SizedBox(width: 10),
+                      SizedBox(width: 5),
                       Text(
                         "Hubungi Penjual",
                         style: textStyle.copyWith(
                           color: Colors.white,
-                          fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),
                       )
@@ -117,28 +117,26 @@ class ItemDetailPage extends StatelessWidget {
                     style: textStyle.copyWith(color: Colors.white),
                   ),
                 ),
-                InkWell(
-                  onTap: () {},
-                  borderRadius: BorderRadius.circular(5),
-                  child: Padding(
-                    padding: const EdgeInsets.all(5),
-                    child: Row(
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(100),
-                          child: CachedNetworkImage(
-                            imageUrl: logoImgUrl + val.umkmLogo,
-                            width: 20,
-                            height: 20,
-                          ),
+                Padding(
+                  padding: const EdgeInsets.all(5),
+                  child: Row(
+                    children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(100),
+                        child: CachedNetworkImage(
+                          imageUrl: logoImgUrl + val.umkmLogo,
+                          width: 20,
+                          height: 20,
+                          fit: BoxFit.cover,
                         ),
-                        Text(
-                          val.umkmName,
-                          style: textStyle.copyWith(
-                              fontWeight: FontWeight.bold, fontSize: 16),
-                        )
-                      ],
-                    ),
+                      ),
+                      SizedBox(width: 5),
+                      Text(
+                        val.umkmName,
+                        style: textStyle.copyWith(
+                            fontWeight: FontWeight.bold, fontSize: 16),
+                      )
+                    ],
                   ),
                 )
               ],

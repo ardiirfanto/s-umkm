@@ -19,7 +19,7 @@ class NavigationPage extends StatelessWidget {
               alignment: Alignment.bottomCenter,
               child: Container(
                 margin: EdgeInsets.symmetric(vertical: 20, horizontal: 50),
-                padding: EdgeInsets.all(10),
+                padding: EdgeInsets.all(5),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   color: Colors.white,
@@ -43,7 +43,7 @@ class NavigationPage extends StatelessWidget {
                   selectedLabelStyle: textStyle,
                   unselectedLabelStyle: textStyle,
                   showUnselectedLabels: false,
-                  iconSize: 30,
+                  iconSize: 20,
                   items: [
                     BottomNavigationBarItem(
                       icon: Icon(Typicons.home),

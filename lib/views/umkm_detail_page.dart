@@ -57,8 +57,8 @@ class UmkmDetailPage extends StatelessWidget {
                 ),
               ),
               ElevatedButton(
-                onPressed: () => launch(
-                    " https://api.whatsapp.com/send?phone=${val.phone}&text=Hallo ${val.umkmName}, Bolehkah Saya Bertanya Sesuatu tentang UMKM ini?"),
+                onPressed: () async => await launch(
+                    "https://api.whatsapp.com/send?phone=62${val.phone}&text=Hallo ${val.umkmName}, Bolehkah Saya Bertanya Sesuatu tentang UMKM ini?"),
                 style: ElevatedButton.styleFrom(
                   primary: primaryColor,
                   shape: RoundedRectangleBorder(
