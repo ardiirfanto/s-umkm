@@ -30,6 +30,17 @@ class UmkmDetailPage extends StatelessWidget {
             color: primaryColor,
           ),
         ),
+        actions: [
+          IconButton(
+            icon: Icon(
+              Icons.map_rounded,
+              color: primaryColor,
+            ),
+            onPressed: () async => await launch(
+              "http://maps.google.com/maps?q=${val.lat},${val.lng}",
+            ),
+          )
+        ],
       ),
       body: Container(
         width: Get.width,

@@ -6,6 +6,7 @@ import 'package:s_umkm/constant/string.dart';
 import 'package:s_umkm/constant/theme.dart';
 import 'package:s_umkm/controllers/fetch_controller.dart';
 import 'package:s_umkm/views/umkm_detail_page.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class UmkmPage extends StatelessWidget {
   @override
@@ -54,8 +55,8 @@ class UmkmPage extends StatelessWidget {
                                     borderRadius: BorderRadius.circular(100),
                                     child: CachedNetworkImage(
                                       imageUrl: logoImgUrl + val.umkmLogo,
-                                      width: 100,
-                                      height: 100,
+                                      width: 70,
+                                      height: 70,
                                       fit: BoxFit.cover,
                                     ),
                                   ),
@@ -69,22 +70,20 @@ class UmkmPage extends StatelessWidget {
                                         style: textStyle.copyWith(
                                           fontWeight: FontWeight.bold,
                                           color: primaryColor,
-                                          fontSize: 18,
                                         ),
                                       ),
                                       Text(
                                         val.phone,
                                         style: textStyle.copyWith(
                                           color: Colors.grey,
-                                          fontSize: 16,
                                         ),
                                       )
                                     ],
                                   ),
                                   Spacer(),
                                   Container(
-                                    margin: EdgeInsets.only(right: 20),
-                                    padding: EdgeInsets.all(7),
+                                    margin: EdgeInsets.only(right: 10),
+                                    padding: EdgeInsets.all(5),
                                     decoration: BoxDecoration(
                                       color: primaryColor.withOpacity(0.8),
                                       shape: BoxShape.circle,
@@ -92,7 +91,7 @@ class UmkmPage extends StatelessWidget {
                                     child: Icon(
                                       Icons.arrow_forward_ios_rounded,
                                       color: Colors.white,
-                                      size: 20,
+                                      size: 17,
                                     ),
                                   )
                                 ],

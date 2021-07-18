@@ -22,6 +22,8 @@ class Umkm {
     this.username,
     this.password,
     this.role,
+    this.lat,
+    this.lng,
     this.items,
   });
 
@@ -35,6 +37,8 @@ class Umkm {
   String username;
   String password;
   String role;
+  String lat;
+  String lng;
   List<Item> items;
 
   factory Umkm.fromJson(Map<String, dynamic> json) => Umkm(
@@ -48,6 +52,8 @@ class Umkm {
         username: json["username"],
         password: json["password"],
         role: json["role"],
+        lat: json["lat"],
+        lng: json["lng"],
         items: List<Item>.from(json["items"].map((x) => Item.fromJson(x))),
       );
 
